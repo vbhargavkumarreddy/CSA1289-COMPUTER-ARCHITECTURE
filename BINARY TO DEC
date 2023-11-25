@@ -1,0 +1,38 @@
+
+#include<stdio.h>
+int main()
+{
+	int binarynum,decimalnum,num,base=1,rem;
+	printf("enter the binary number in 0's and 1's:");
+	scanf("%d",&num);
+	binarynum=num;
+	while(num>0)
+	{
+		rem=num%10;
+		decimalnum=decimalnum+rem*base;
+		num/=10;
+		base=base*2;
+	}
+	printf("binary number:%d",binarynum);
+	printf("\ndecimal number:%d",decimalnum);
+}
+BINARY TO HEX
+
+#include <stdio.h>
+ 
+int main()
+{
+    long int binaryval, hexadecimalval , i = 1, remainder;
+ 
+    printf("Enter the binary number: ");
+    scanf("%ld", &binaryval);
+    while (binaryval != 0)
+    {
+        remainder = binaryval % 10;
+        hexadecimalval = hexadecimalval + remainder * i;
+        i = i * 2;
+        binaryval = binaryval / 10;
+    }
+    printf("Equivalent hexadecimal value: %lo", hexadecimalval);
+    return 0;
+}
